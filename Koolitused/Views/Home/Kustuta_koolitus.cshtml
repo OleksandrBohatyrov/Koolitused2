@@ -1,0 +1,64 @@
+﻿@model Koolitused.Models.Koolituss
+
+@{
+    ViewBag.Title = "Kustuta_koolitus";
+}
+
+<h2>Kustuta_koolitus</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Koolituss</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Koolitusnimetus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Koolitusnimetus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Koolitushind)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Koolitushind)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Koolitusmaht)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Koolitusmaht)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OpetajaEesnimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpetajaEesnimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OpetajaPerenimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpetajaPerenimi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Tagasi loendisse", "Index")
+        </div>
+    }
+</div>

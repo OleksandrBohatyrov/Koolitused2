@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Koolitused.Models.Opilane>
+
+@{
+    ViewBag.Title = "Opilane";
+}
+
+<h2>Opilane</h2>
+
+<p>
+    @Html.ActionLink("Loo uus opilane", "Loo_opilane")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Eesnimi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Perenimi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sunniaasta)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Eesnimi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Perenimi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sunniaasta)
+        </td>
+        <td>
+            @Html.ActionLink("Redigeeri", "Redigeeri_opilane", new { id=item.Id }) |
+            @Html.ActionLink("Rohkem", "Details") |
+            @Html.ActionLink("Kustuta", "Kustuta_opilane", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
